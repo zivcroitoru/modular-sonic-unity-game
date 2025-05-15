@@ -376,7 +376,6 @@
 "Assets/Scripts/SC_CoinsManager.cs"
 "Assets/Scripts/SC_Death.cs"
 "Assets/Scripts/SC_Floor.cs"
-"Assets/Scripts/test.cs"
 "Assets/Scripts/Weapons/AxeWeapon.cs"
 "Assets/Scripts/Weapons/FireballWeapon.cs"
 "Assets/Scripts/Weapons/WeaponsHandler.cs"
