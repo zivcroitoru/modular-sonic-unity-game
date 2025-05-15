@@ -1,32 +1,4 @@
-# Enforce LF line endings for cross-platform consistency
-* text=auto eol=lf
-
-# Unity YAML files
-*.meta text
-*.unity text
-*.prefab text
-*.mat text
-*.anim text
-*.asset text
-
-# C# scripts
-*.cs text
-
-# Shader files
-*.shader text
-
-# Ignore binary files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.fbx binary
-*.mp3 binary
-*.ogg binary
-*.wav binary
-*.ttf binary
-*.dll binary
-
-# Prevent Git from modifying line endings in these binary files
-*.exe binary
-*.zip binary
-*.unitypackage binary
+* text=auto
+*.cs text eol=lf
+*.meta text eol=lf
+*.json text eol=lf

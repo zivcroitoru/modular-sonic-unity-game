@@ -359,6 +359,7 @@
 "Assets/Scripts/Controller/StarController.cs"
 "Assets/Scripts/Core/MiniJSON.cs"
 "Assets/Scripts/EnemySpawner.cs"
+"Assets/Scripts/git test 3.cs"
 "Assets/Scripts/git test2.cs"
 "Assets/Scripts/gittest.cs"
 "Assets/Scripts/Interfaces/IPowerUp.cs"
