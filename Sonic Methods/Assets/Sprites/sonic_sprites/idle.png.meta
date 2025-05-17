@@ -331,8 +331,8 @@ TextureImporter:
       name: idle_11
       rect:
         serializedVersion: 2
-        x: 585
-        y: 7
+        x: 584
+        y: 8
         width: 33
         height: 39
       alignment: 0
@@ -479,7 +479,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 950
-        y: 7
+        y: 8
         width: 30
         height: 39
       alignment: 0
@@ -517,6 +517,7 @@ TextureImporter:
       idle_16: -1727268504
       idle_17: 410080218
       idle_18: -1282584299
+      idle_19: 1155738493
       idle_2: 897522661
       idle_3: 1481958511
       idle_4: -489191110

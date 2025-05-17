@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Principal;
@@ -71,23 +71,22 @@ public class BuildLevel : EditorWindow
         }
     }
 
-    private void CreateGameObject(string prefabName,int index,int height,int width)
+    private void CreateGameObject(string prefabName, int index, int height, int width)
     {
-        GameObject temp = Instantiate(Resources.Load("Tiles/" +prefabName)) as GameObject;
+        GameObject temp = Instantiate(Resources.Load("Tiles/" + prefabName)) as GameObject;
+
         int colCalc = index % width;
-        string col = colCalc.ToString();
-        if(colCalc < 10)
-            col = "0" + colCalc;
+        int rowCalc = (height - 1) - (index / width);
 
-        int rowCalc = (int)((height - 1) - ((int)(index / width)));
-        string row = rowCalc.ToString();
-        if(rowCalc < 10)
-            row = "0" + rowCalc.ToString();
-
-        temp.name = row + col;
+        temp.name = rowCalc.ToString("00") + colCalc.ToString("00");
         temp.transform.localPosition = new Vector3(colCalc, rowCalc, 0);
 
         if (_world)
             temp.transform.SetParent(_world.transform);
+
+        // 🔥 Automatically assign "Ground" layer if floor tile
+        if (prefabName == "Prefab_Floor")
+            temp.layer = LayerMask.NameToLayer("Ground");  // ← make sure this layer exists in your project
     }
+
 }
