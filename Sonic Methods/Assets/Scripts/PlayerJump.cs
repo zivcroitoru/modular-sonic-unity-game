@@ -1,32 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
     public float jumpSpeed = 100;
-    private bool isJumping = false;
     private Rigidbody2D rigid;
-    private PlayerAnimator animator;
+    private PlayerMovement movement;
+    private Animator animator;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        animator = GetComponent<PlayerAnimator>();
+        movement = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
 
     private void Jump()
     {
-        rigid.velocity = Vector3.zero;
-        rigid.AddForce(new Vector2(0, jumpSpeed));
+        rigid.velocity = Vector2.zero;
+        rigid.AddForce(Vector2.up * jumpSpeed);
+
+        if (animator != null)
+            animator.SetTrigger("Jump");
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (transform.IsGrounded(LayerMask.GetMask("Default")))
+            if (movement != null && movement.IsGrounded)
                 Jump();
-            animator.TriggerJump();
         }
     }
 }
