@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 3acf3725bde869f43b1e390813ecd744
+<<<<<<<< Updated upstream:Sonic Methods/Assets/ActionManager.cs.meta
+guid: 223aa5d160f79bf44bc6035a1c4e6508
+========
+guid: 259c2bd7fa115f341ac444dc91a1a336
+>>>>>>>> Stashed changes:Sonic Methods/Assets/PlayerAnimator.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

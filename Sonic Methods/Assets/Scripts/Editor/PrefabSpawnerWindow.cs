@@ -57,43 +57,23 @@ public class PrefabSpawnerWindow : EditorWindow
 
     private void OnSceneGUI(SceneView sceneView)
     {
-
-        if (_prefabDictionary == null || !_prefabDictionary.ContainsKey(_dropDownOptions[_selectedIndex]))
-            return;
-
-        Event current = Event.current;
-
-        if (current.type == EventType.MouseDown && current.button == 1)
+        if(_isSpawningEnabled && _prefabDictionary != null &&
+            _prefabDictionary.ContainsKey(_dropDownOptions[_selectedIndex]))
         {
-            Ray ray = HandleUtility.GUIPointToWorldRay(current.mousePosition);
-            Vector3 mouseWorldPos = ray.origin;
-
-            if (current.shift)
+            Event current = Event.current;
+            if(current.type == EventType.MouseDown && current.button == 1)
             {
-                Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-                if (hit.collider != null)
-                {
-                    GameObject obj = hit.collider.gameObject;
-                    string objName = obj.name; // cache before destroying
-                    DestroyImmediate(obj);
-                    Debug.Log("Deleted: " + obj.name);
-
-                }
+                Debug.Log("_selectedIndex " + _selectedIndex);
+                Vector2 mousePosition = Event.current.mousePosition;
+                Ray ray = HandleUtility.GUIPointToWorldRay(current.mousePosition);
+                Vector3 mouseWorldPos = ray.origin;
+                Vector3 mouseWorldPosRounded = new Vector3(Mathf.RoundToInt(mouseWorldPos.x), Mathf.RoundToInt(mouseWorldPos.y), 0);
+                Instantiate(_prefabDictionary[_dropDownOptions[_selectedIndex]],
+                   mouseWorldPosRounded, Quaternion.identity);
+                Debug.Log("Mouse Position in Scene " + mouseWorldPosRounded);
             }
-            else if (_isSpawningEnabled)
-            {
-                Vector3 roundedPos = new Vector3(Mathf.RoundToInt(mouseWorldPos.x), Mathf.RoundToInt(mouseWorldPos.y), 0);
-                Instantiate(_prefabDictionary[_dropDownOptions[_selectedIndex]], roundedPos, Quaternion.identity);
-                Debug.Log("Spawned at: " + roundedPos);
-            }
-
-            current.Use();
         }
     }
-
-
 
     private void TogglePrefabSpawning()
     {
