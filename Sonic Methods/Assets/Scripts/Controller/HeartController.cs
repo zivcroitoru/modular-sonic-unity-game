@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,21 +58,28 @@ private IEnumerator BlinkRed()
     private IEnumerator SpikeDamageRoutine()
     {
         while (!_heartModel.IsDead())
-    {
-        _heartModel.RemoveHeart();
+        {
+            _heartModel.RemoveHeart();
+            UpdateView();
+
+            if (spriteRenderer != null)
+                yield return BlinkRed(); // במקום StartCoroutine
+
+            if (_heartModel.IsDead())
+                break;
+
+            yield return new WaitForSeconds(1f);
+        }
+
+        if (resetPosition != null)
+        {
+            yield return BlinkRed();
+            resetPosition.ResetPlayerPosition();
+        }
+
+        _heartModel.AddHeart();
         UpdateView();
-        
-        if (spriteRenderer != null)
-            StartCoroutine(BlinkRed());
-
-        yield return new WaitForSeconds(1f);
+        spikeRoutine = null;
     }
 
-   // Reset when out of hearts
-    if (resetPosition != null)
-        resetPosition.ResetPlayerPosition();
-    _heartModel.AddHeart(); // Optional: reset to 1
-    UpdateView();
-    spikeRoutine = null;
-    }
 }
