@@ -3,20 +3,21 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
     public float jumpSpeed = 100;
+    public LayerMask groundLayer;
+
     private Rigidbody2D rigid;
-    private PlayerMovement movement;
     private Animator animator;
+    private bool canDoubleJump = true;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        movement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
     }
 
     private void Jump()
     {
-        rigid.velocity = Vector2.zero;
+        rigid.velocity = new Vector2(rigid.velocity.x, 0);
         rigid.AddForce(Vector2.up * jumpSpeed);
 
         if (animator != null)
@@ -25,10 +26,22 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
+        bool isGrounded = transform.IsGrounded(groundLayer);
+
+        if (isGrounded)
+            canDoubleJump = true;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (movement != null && movement.IsGrounded)
+            if (isGrounded)
+            {
                 Jump();
+            }
+            else if (canDoubleJump)
+            {
+                Jump();
+                canDoubleJump = false;
+            }
         }
     }
 }
