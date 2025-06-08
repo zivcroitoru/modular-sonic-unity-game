@@ -9,6 +9,7 @@ public class SpeedUpPowerUp : IPowerUp
         if(player != null)
         {
             Debug.Log("Start Speed Up!");
+            // Try to get the PlayerSpeedUp component from the player
             PlayerSpeedUp playerSpeedUp = player.GetComponent<PlayerSpeedUp>();
             if (playerSpeedUp != null)
                 playerSpeedUp.ActivateSpeedUp();

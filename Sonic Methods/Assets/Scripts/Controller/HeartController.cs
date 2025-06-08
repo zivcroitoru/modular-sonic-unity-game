@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HeartController : MonoBehaviour
 {
-    [SerializeField] private HeartView heartView;
     [SerializeField] private SpriteRenderer spriteRenderer;
     private IHeartModel _heartModel;
     private IHeartView _heartView;
@@ -25,9 +24,9 @@ public class HeartController : MonoBehaviour
 
     private void Awake()
     {
+        _heartView = FindObjectOfType<HeartView>();
         resetPosition = GetComponent<ResetPosition>();
         _heartModel = new HeartModel();
-        _heartView = heartView;
         UpdateView();
     }
 
@@ -55,31 +54,41 @@ private IEnumerator BlinkRed()
     spriteRenderer.color = originalColor;
 }
 
-    private IEnumerator SpikeDamageRoutine()
+private IEnumerator SpikeDamageRoutine()
+{
+    while (!_heartModel.IsDead())
     {
-        while (!_heartModel.IsDead())
-        {
-            _heartModel.RemoveHeart();
-            UpdateView();
-
-            if (spriteRenderer != null)
-                yield return BlinkRed(); // במקום StartCoroutine
-
-            if (_heartModel.IsDead())
-                break;
-
-            yield return new WaitForSeconds(1f);
-        }
-
-        if (resetPosition != null)
-        {
-            yield return BlinkRed();
-            resetPosition.ResetPlayerPosition();
-        }
-
-        _heartModel.AddHeart();
+        _heartModel.RemoveHeart();
         UpdateView();
-        spikeRoutine = null;
+
+        if (spriteRenderer != null)
+            yield return BlinkRed();
+
+        if (_heartModel.IsDead())
+            break;
+
+        yield return new WaitForSeconds(1f);
     }
+
+    if (resetPosition != null)
+    {
+        yield return BlinkRed();
+        resetPosition.ResetPlayerPosition();
+
+        // Wait one frame before respawning to avoid timing issues
+        yield return null;
+
+        RespawnAll respawner = FindObjectOfType<RespawnAll>();
+        if (respawner != null)
+        {
+            Debug.Log("called respawn!");
+            respawner.Respawn();
+        }
+    }
+
+    _heartModel.AddHeart();
+    UpdateView();
+    spikeRoutine = null;
+}
 
 }

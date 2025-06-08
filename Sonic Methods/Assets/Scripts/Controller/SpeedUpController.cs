@@ -11,6 +11,7 @@ public class SpeedUpController : MonoBehaviour
         {
             Debug.Log("Mario Collision! Speedup");
             this.gameObject.SetActive(false);
+            // Gives player the speed-up effect by calling his power-up system
             col.gameObject.GetComponent<PlayerPowerUp>().CollectPowerUp(new SpeedUpPowerUp());
         }
     }

@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7708993420142994295}
   - component: {fileID: 4280609895904662469}
   - component: {fileID: 9214897566082419155}
+  - component: {fileID: -7595864522255180199}
   m_Layer: 0
   m_Name: Prefab_Shadow
   m_TagString: Player
@@ -188,6 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 500
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &3298974795843443290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +275,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c6da78a4089cb46a45bc2fbb2d403e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7595864522255180199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42329389962944314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa9cc925401a24d967a28e0cca8e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &456726444697063484

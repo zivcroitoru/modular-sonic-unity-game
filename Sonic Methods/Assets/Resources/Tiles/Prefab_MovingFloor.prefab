@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -430983173551274944}
   m_Layer: 3
   m_Name: Prefab_MovingFloor
-  m_TagString: Untagged
+  m_TagString: MovingTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: d35f88594c360f64b87319772fb061e5, type: 3}
   m_Color: {r: 1, g: 0.7293662, b: 0, a: 1}
   m_FlipX: 0
@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSize: 1
-  moveTime: 73.9
+  moveTime: 2

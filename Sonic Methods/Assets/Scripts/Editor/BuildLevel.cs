@@ -52,12 +52,16 @@ public class BuildLevel : EditorWindow
                     {
                         switch(levelTiles[i].ToString())
                         {
-                            case "1": CreateGameObject("Prefab_Flower",i,height,width);break;
-                            case "2": CreateGameObject("Prefab_Star", i,height,width);break;
-                            case "3": CreateGameObject("Prefab_Mario", i,height,width);break;
-                            case "4": CreateGameObject("Prefab_Floor", i,height,width);break;
-                            case "5": CreateGameObject("Prefab_Coin", i,height,width); break;
-                            case "6": CreateGameObject("Prefab_Spikes", i, height, width);break;
+                            case "1": CreateGameObject("Prefab_Shadow",i,height,width);break;
+                            case "2": CreateGameObject("Prefab_Heart", i,height,width);break;
+                            case "3": CreateGameObject("Prefab_Flower", i,height,width);break;
+                            case "4": CreateGameObject("Prefab_Star", i,height,width);break;
+                            case "5": CreateGameObject("Prefab_Speed", i,height,width); break;
+                            case "6": CreateGameObject("Prefab_MovingFloor", i, height, width);break;
+                            case "7": CreateGameObject("Prefab_Coin", i, height, width);break;
+                            case "8": CreateGameObject("Prefab_Floor", i, height, width);break;
+                            case "9": CreateGameObject("Prefab_Spikes", i, height, width);break;
+                            case "10": CreateGameObject("Prefab_DissapearingFloor", i, height, width);break;
                         }
                     }
                 }

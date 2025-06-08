@@ -25,7 +25,7 @@ public class PlayerInvincible : MonoBehaviour
     IEnumerator ActivateInvincibilityTimer()
     {
         _isInvincible = true;
-        _curSpriteRenderer.color = Color.red;
+        _curSpriteRenderer.color = Color.yellow;
         yield return new WaitForSeconds(powerUpDuration);
         _curSpriteRenderer.color = Color.white;
         _isInvincible = false;

@@ -13,13 +13,18 @@ public class PrefabSpawnerWindow : EditorWindow
 
     private string[] _dropDownOptions = new string[] 
     {
+        "Prefab_Shadow",
+        "Prefab_Heart",
         "Prefab_Flower",
         "Prefab_Star",
-        "Prefab_Mario",
-        "Prefab_Floor",
+        "Prefab_Speed",
+        "Prefab_MovingFloor",
         "Prefab_Coin",
+        "Prefab_Floor",
         "Prefab_Spikes",
+        "Prefab_DissapearingFloor"
     };
+
     [MenuItem("Tools/Prefab Spawner")]
     public static void ShowWindow()
     {
