@@ -25,7 +25,9 @@ A high-speed 2D Sonic platformer built in Unity using professional software engi
 * **Modular Pickups** (`IPickup`) – coins, power-ups
 
 ### 🧵 **Async & Tasks**
-
+- Handles **power-up timing** like speed boost and invincibility using async `Tasks`
+- Manages **duration-based effects**, UI flashes, and auto-revert logic
+- Smooth **transition animations** triggered without blocking gameplay
 
 ### 🛠 **Editor Scripts & Extensions**
 
