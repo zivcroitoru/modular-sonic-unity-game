@@ -13,9 +13,11 @@ public class HeartController : MonoBehaviour
 
     private void OnEnable()
     {
+        // Listen to spike and heart collision events
         SC_Death.OnSpikeCollision += StartSpikeDamage;
         SC_Heart.OnHeartCollision += OnHeartCollision;
     }
+
     private void OnDisable()
     {
         SC_Death.OnSpikeCollision -= StartSpikeDamage;
@@ -41,54 +43,55 @@ public class HeartController : MonoBehaviour
         if(_heartView != null && _heartModel != null)
             _heartView.UpdateHeartAmount(_heartModel.GetHeartAmount());
     }
+
     private void StartSpikeDamage()
-{
-    if (spikeRoutine == null)
-        spikeRoutine = StartCoroutine(SpikeDamageRoutine());
-}
-private IEnumerator BlinkRed()
-{
-    Color originalColor = spriteRenderer.color;
-    spriteRenderer.color = Color.red;
-    yield return new WaitForSeconds(0.1f);
-    spriteRenderer.color = originalColor;
-}
-
-private IEnumerator SpikeDamageRoutine()
-{
-    while (!_heartModel.IsDead())
     {
-        _heartModel.RemoveHeart();
-        UpdateView();
-
-        if (spriteRenderer != null)
-            yield return BlinkRed();
-
-        if (_heartModel.IsDead())
-            break;
-
-        yield return new WaitForSeconds(1f);
+        // Prevent multiple routines running
+        if (spikeRoutine == null)
+            spikeRoutine = StartCoroutine(SpikeDamageRoutine());
     }
 
-    if (resetPosition != null)
+    private IEnumerator BlinkRed()
     {
-        yield return BlinkRed();
-        resetPosition.ResetPlayerPosition();
+        // Briefly change color to red
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = originalColor;
+    }
 
-        // Wait one frame before respawning to avoid timing issues
-        yield return null;
-
-        RespawnAll respawner = FindObjectOfType<RespawnAll>();
-        if (respawner != null)
+    private IEnumerator SpikeDamageRoutine()
+    {
+        while (!_heartModel.IsDead())
         {
-            Debug.Log("called respawn!");
-            respawner.Respawn();
+            _heartModel.RemoveHeart();
+            UpdateView();
+
+            if (spriteRenderer != null)
+                yield return BlinkRed();
+
+            if (_heartModel.IsDead())
+                break;
+
+            yield return new WaitForSeconds(1f);
         }
+
+        if (resetPosition != null)
+        {
+            yield return BlinkRed();
+            resetPosition.ResetPlayerPosition();
+            yield return null;
+
+            RespawnAll respawner = FindObjectOfType<RespawnAll>();
+            if (respawner != null)
+            {
+                Debug.Log("called respawn!");
+                respawner.Respawn();
+            }
+        }
+
+        _heartModel.AddHeart();
+        UpdateView();
+        spikeRoutine = null;
     }
-
-    _heartModel.AddHeart();
-    UpdateView();
-    spikeRoutine = null;
-}
-
 }

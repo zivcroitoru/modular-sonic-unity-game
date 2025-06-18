@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7507183520791349527}
   - component: {fileID: 2258681089584782245}
   - component: {fileID: 8924678103228943086}
-  - component: {fileID: 8159518164580686331}
   - component: {fileID: 558963703849435370}
   - component: {fileID: 6958668454097635327}
   - component: {fileID: 3298974795843443290}
@@ -21,6 +20,7 @@ GameObject:
   - component: {fileID: 4280609895904662469}
   - component: {fileID: 9214897566082419155}
   - component: {fileID: -7595864522255180199}
+  - component: {fileID: 359840409193202075}
   m_Layer: 0
   m_Name: Prefab_Shadow
   m_TagString: Player
@@ -124,41 +124,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8159518164580686331
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42329389962944314}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.45
 --- !u!114 &558963703849435370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb2bf6160098b6468af468c92d56d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartView: {fileID: 0}
   spriteRenderer: {fileID: 2258681089584782245}
 --- !u!114 &9214897566082419155
 MonoBehaviour:
@@ -289,6 +253,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2aa9cc925401a24d967a28e0cca8e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &359840409193202075
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42329389962944314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.859375
 --- !u!1 &456726444697063484
 GameObject:
   m_ObjectHideFlags: 0

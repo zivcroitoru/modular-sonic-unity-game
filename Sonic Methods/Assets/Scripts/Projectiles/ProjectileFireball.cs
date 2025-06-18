@@ -1,13 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileFireball : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float destroyTime = 5f;
+    [SerializeField]
+    private float _speed = 5.0f;
+    [SerializeField]
+    private float _destroyTime = 5f;
     private Rigidbody2D _rigid;
 
+
+    public void Initilized(float speed, float lifeTime)
+    {
+        _speed = speed;
+        _destroyTime = lifeTime;
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
     public void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
@@ -18,14 +31,19 @@ public class ProjectileFireball : MonoBehaviour
         if (_rigid != null)
         {
             transform.localScale = new Vector3(direction, 1, 1);
-            _rigid.AddForce(new Vector3(speed * direction,0,0));
-            StartCoroutine(DestroyObject());
+            _rigid.AddForce(new Vector3(_speed * direction,0,0));
+            StartCoroutine(DeactivateLogic());
         }
     }
 
-    private IEnumerator DestroyObject()
+    private IEnumerator DeactivateLogic()
     {
-        yield return new WaitForSeconds(destroyTime);
-        Destroy(this.gameObject);
+        yield return new WaitForSeconds(_destroyTime);
+        DeactivateObject();
+    }
+
+    private void DeactivateObject()
+    {
+        this.gameObject.SetActive(false);
     }
 }

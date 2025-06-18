@@ -8,11 +8,15 @@ public class FireballWeapon : MonoBehaviour, IUseableWeapon
     private bool _isEquip = false;
 
 
-    public void Shoot()
+ public void Shoot()
     {
         if(fireball != null && _isEquip)
         {
-            GameObject curFireball = Instantiate(fireball,transform.position,new Quaternion());
+            //GameObject curFireball = Instantiate(fireball,transform.position,new Quaternion());
+            GameObject curFireball = FireballPoolManager.Instance.GetPooledFireball();
+            curFireball.transform.position = transform.position;
+            curFireball.SetActive(true);
+
             ProjectileFireball scFireball = curFireball.GetComponent<ProjectileFireball>();
             if (scFireball != null)
             {

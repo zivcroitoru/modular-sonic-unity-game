@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
 
     [Header("Ground Check")]
-    public float groundRayLength = 0.2f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rigid;
@@ -26,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Ground check ray from halfway down the sprite
-        Vector2 origin = transform.position + Vector3.down * 0.5f;
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundRayLength, groundLayer);
-        
-        IsGrounded = hit.collider != null;
+        IsGrounded = transform.IsGrounded(groundLayer);
         if (IsGrounded)
         {
             animator.SetBool("isGrounded", true);
@@ -46,12 +42,5 @@ public class PlayerMovement : MonoBehaviour
         // Flip sprite
         if (direction != 0)
             transform.localScale = new Vector3(direction > 0 ? 1 : -1, 1, 1);
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Vector2 origin = transform.position + Vector3.down * 0.5f;
-        Gizmos.DrawLine(origin, origin + Vector2.down * groundRayLength);
     }
 }

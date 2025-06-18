@@ -2,18 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireFlowerController : MonoBehaviour
+public class FireFlowerController : PickUp
 {
-
-    void OnTriggerEnter2D(Collider2D col)
+    protected override void OnPickUp(GameObject player)
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("Mario Collision! Fire Flower");
-            this.gameObject.SetActive(false);
-            col.gameObject.GetComponent<PlayerPowerUp>().CollectPowerUp(new FireFlowerPowerUp());
-            //Implement Power Up
-        }
+        player.GetComponent<PlayerPowerUp>().CollectPowerUp(new FireFlowerPowerUp());
     }
 }

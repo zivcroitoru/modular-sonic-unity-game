@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3450815253933874588}
   - component: {fileID: 6096276390306413699}
   - component: {fileID: 3450815253933874589}
-  - component: {fileID: 1981562619721637355}
+  - component: {fileID: 1844815829049720599}
   m_Layer: 0
   m_Name: Prefab_Flower
   m_TagString: Pickable
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 575d26a73f067454b9b66ce9718a378b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af84e54d8884628439e3710ffc286406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d2cdfc8d5017f4e98b7b1a38a61a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1981562619721637355
+--- !u!58 &1844815829049720599
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,9 +127,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75

@@ -23,8 +23,8 @@ public class MovingTile2D : MonoBehaviour
     {
         while (true)
         {
-            yield return MoveTo(rightPos);
-            yield return MoveTo(leftPos);
+            yield return MoveTo(rightPos);  // Move right
+            yield return MoveTo(leftPos);   // Then move left
         }
     }
 
@@ -35,11 +35,11 @@ public class MovingTile2D : MonoBehaviour
 
         while (elapsed < moveTime)
         {
-            transform.position = Vector3.Lerp(initial, target, elapsed / moveTime);
+            transform.position = Vector3.Lerp(initial, target, elapsed / moveTime); // Smooth movement
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = target;
+        transform.position = target; // Snap exactly to target at the end
     }
 }
