@@ -32,7 +32,7 @@ A high-speed 2D Sonic platformer built in Unity using professional software engi
 ### 🛠 **Editor Scripts & Extensions**
 
 * Custom `PrefabSpawnerWindow` for drag-and-drop coin placement
-* Level validator: checks spawn points, hazards, and collectibles
+* Custom editor tool to **auto-generate levels from Tiled `.tmj` files** using a text-based layout parser
 * `Gizmos` and debug overlays for hitboxes and sensors
 
 ---
