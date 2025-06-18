@@ -1,4 +1,4 @@
-# 🌀 Work-in-Progress Sonic-Style Unity Platformer
+# 🌀 Work-in-Progress Sonic-Style Game
 
 [![Watch the demo](https://img.youtube.com/vi/-EWJJSfTjs0/hqdefault.jpg)](https://youtu.be/-EWJJSfTjs0)
 
