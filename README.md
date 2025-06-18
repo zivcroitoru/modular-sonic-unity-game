@@ -1,1 +1,1 @@
-Modular Unity Game as part of Advanced Methods in Game Development
+Modular Unity Game as part of Advanced Methods in Game Development course.
