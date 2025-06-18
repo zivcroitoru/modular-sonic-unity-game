@@ -1,8 +1,5 @@
 # 🌀 Work-in-Progress Sonic-Style Unity Platformer
-[![Watch the demo](https://img.youtube.com/vi/-EWJJSfTjs0/hqdefault.jpg)](https://youtu.be/-EWJJSfTjs0)
-
-
-
+https://youtu.be/VIDEO_ID
 
 A high-speed 2D Sonic platformer built in Unity using professional software engineering practices:
 **SOLID design**, **async gameplay systems**, **editor extensions**, **object pooling**, and powerful **architecture patterns**.
