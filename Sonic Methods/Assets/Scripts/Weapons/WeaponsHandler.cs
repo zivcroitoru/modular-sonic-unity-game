@@ -7,7 +7,7 @@ public class WeaponsHandler : MonoBehaviour
 {
     public FireballWeapon fireballWeapon;
     public AxeWeapon axeWeapon;
-    public LaserWeapon laserWeapon; // New laser weapon
+  public LaserWeapon laserWeapon; // New laser weapon
 
     void Update()
     {

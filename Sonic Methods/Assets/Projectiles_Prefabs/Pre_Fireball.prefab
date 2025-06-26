@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7344749491402581461}
   - component: {fileID: 3128399289799986672}
   - component: {fileID: -3460905289729604622}
-  - component: {fileID: 8441927413991358612}
+  - component: {fileID: 7299617599680421506}
   m_Layer: 0
   m_Name: Pre_Fireball
   m_TagString: Untagged
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &8441927413991358612
+--- !u!114 &7299617599680421506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 460594579410848658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40caaa77a73aaf445b7ee577847b78c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 868cfcc11b83590479b0624947b5ec2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 500
-  _destroyTime: 1
+  _destroyTime: 2

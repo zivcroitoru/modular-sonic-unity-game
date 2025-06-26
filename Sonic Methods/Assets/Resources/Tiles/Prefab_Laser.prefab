@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3450815253933874588}
   - component: {fileID: 6096276390306413699}
   - component: {fileID: 1844815829049720599}
-  - component: {fileID: 7841145672717875940}
+  - component: {fileID: 4317319392697331038}
   m_Layer: 0
   m_Name: Prefab_Laser
   m_TagString: Pickable
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!114 &7841145672717875940
+--- !u!114 &4317319392697331038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9045380075985753326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a570d61a97576f498d88c90cc10e35a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a506c2998f0cbb46bc338be48a3e56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

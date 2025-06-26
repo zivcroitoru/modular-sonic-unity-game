@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3128399289799986672}
   - component: {fileID: -3460905289729604622}
   - component: {fileID: -2279043781901893479}
-  - component: {fileID: 7795602078173237148}
+  - component: {fileID: 5778928401042836105}
   m_Layer: 0
   m_Name: Pre_Laser
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31
---- !u!114 &7795602078173237148
+--- !u!114 &5778928401042836105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 460594579410848658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cdfba3d8184122408cfb23c41761f92, type: 3}
+  m_Script: {fileID: 11500000, guid: 40caaa77a73aaf445b7ee577847b78c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
-  lifeTime: 1
+  _speed: 0.01
+  _destroyTime: 1

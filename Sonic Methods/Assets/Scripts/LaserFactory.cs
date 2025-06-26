@@ -1,21 +1,19 @@
 using UnityEngine;
-using Zenject; 
 
 public class LaserFactory
 {
-    private readonly ILaserBuilder builder;
+    private GameObject _laserPrefab;
 
-    // Zenject will inject the correct builder automatically
-    [Inject]
-    public LaserFactory(ILaserBuilder builder)
+    public LaserFactory(GameObject laserPrefab)
     {
-        this.builder = builder;
+        _laserPrefab = laserPrefab;
     }
 
-    public GameObject CreateLaser(GameObject laserPrefab)
+    public ProjectileLaser CreateLaser()
     {
-        builder.SetSpeed();
-        builder.SetLifeTime();
-        return builder.Build(laserPrefab);
+        GameObject laser = Object.Instantiate(_laserPrefab);
+        ProjectileLaser logic = laser.GetComponent<ProjectileLaser>();
+        logic.Initialized(0.5f, 3f); // You can expose this too
+        return logic;
     }
 }
