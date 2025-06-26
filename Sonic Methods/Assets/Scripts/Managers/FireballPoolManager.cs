@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class FireballPoolManager : MonoBehaviour
 {
-    public static FireballPoolManager Instance { get; private set; }
     private List<GameObject> _pooledFireBalls;
     public GameObject fireballPrefab;
     public Transform projectileHolder;
@@ -12,15 +12,18 @@ public class FireballPoolManager : MonoBehaviour
     [SerializeField]
     private int _amountToPool = 5;
 
-    private FireballBuilder _fireballBuilder;
     private FireballDirector _fireballDirector;
+
+
+    [Inject]
+    public void Construct(FireballDirector fireballDirector)
+    {
+        _fireballDirector = fireballDirector;
+    }
 
     private void Awake()
     {
-        Instance = this;
         _pooledFireBalls = new List<GameObject>();
-        _fireballBuilder = new FireballBuilder();
-        _fireballDirector = new FireballDirector(_fireballBuilder);
     }
 
     private void Start()
