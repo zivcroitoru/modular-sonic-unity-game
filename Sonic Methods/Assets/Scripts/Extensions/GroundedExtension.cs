@@ -17,7 +17,7 @@ public static bool IsGrounded(this Transform transform, LayerMask groundLayer)
     Debug.DrawLine(center + Vector2.left * size.x / 2, center + Vector2.right * size.x / 2, Color.green, 0.1f);
 
     bool isGrounded = Physics2D.OverlapBox(center, size, 0f, groundLayer);
-    Debug.Log($"IsGrounded at {center} size {size}: {isGrounded}");
+   // Debug.Log($"IsGrounded at {center} size {size}: {isGrounded}");
     return isGrounded;
 }
 }

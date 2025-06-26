@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  groundRayLength: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -298,7 +297,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7459979367475338311}
   - component: {fileID: 8361563909286458207}
-  - component: {fileID: 3295144118474255242}
   - component: {fileID: 3224434509036344537}
   m_Layer: 0
   m_Name: Weapons
@@ -334,21 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8ebd8b7844502498d1dda408b97103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireballWeapon: {fileID: 3295144118474255242}
+  fireballWeapon: {fileID: 0}
   axeWeapon: {fileID: 3224434509036344537}
---- !u!114 &3295144118474255242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456726444697063484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756e8507f1654e642a52f67cdd627b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireball: {fileID: 460594579410848658, guid: 749db9f6f469d3843a8558e628486c6e, type: 3}
 --- !u!114 &3224434509036344537
 MonoBehaviour:
   m_ObjectHideFlags: 0

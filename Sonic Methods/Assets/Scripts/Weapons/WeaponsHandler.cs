@@ -7,7 +7,8 @@ public class WeaponsHandler : MonoBehaviour
 {
     public FireballWeapon fireballWeapon;
     public AxeWeapon axeWeapon;
-    
+    public LaserWeapon laserWeapon; // New laser weapon
+
     void Update()
     {
         ActivateWeapon();
@@ -17,9 +18,14 @@ public class WeaponsHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && fireballWeapon != null)
             fireballWeapon.Shoot();
+
         if (Input.GetKeyDown(KeyCode.Z) && axeWeapon != null)
             axeWeapon.Reload();
+
         if (Input.GetKeyDown(KeyCode.X) && axeWeapon != null)
             axeWeapon.Shoot();
+
+        if (Input.GetKeyDown(KeyCode.C) && laserWeapon != null) // 'C' triggers laser
+            laserWeapon.Shoot();
     }
 }

@@ -2,37 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Builder class for creating Laser projectiles with specific settings
 public class LaserBuilder : ILaserBuilder
 {
-    private float speed;      // How fast the laser moves
-    private float lifeTime;   // How long the laser exists
+    private float speed;
+    private float lifeTime;
 
-    // Set the lifetime to 2 seconds (could be parameterized)
     public void SetLifeTime()
     {
-        this.lifeTime = 2;
+        this.lifeTime = 2f;
     }
 
-    // Set the speed to 400 units (could be parameterized)
     public void SetSpeed()
     {
-        this.speed = 400;
+        this.speed = 400f;
     }
 
-    // Creates (instantiates) a new laser GameObject from a prefab
     public GameObject Build(GameObject laserPrefab)
     {
-        // Create a new laser object from the given prefab
         GameObject newLaser = Object.Instantiate(laserPrefab);
 
-        // Get the ProjectileLaser script attached to the new laser object
-        ProjectileLaser laserComponent = newLaser.GetComponent<ProjectileLaser>();
+        // Get BaseProjectile component instead of non-existent ProjectileLaser
+        BaseProjectile projectile = newLaser.GetComponent<BaseProjectile>();
 
-        // Initialize the laser with speed and lifetime
-        laserComponent.Initialize(speed, lifeTime);
+        if (projectile != null)
+        {
+            projectile.Initialize(speed, lifeTime); // You must implement this method in BaseProjectile
+        }
+        else
+        {
+            Debug.LogWarning("BaseProjectile component missing on laser prefab!");
+        }
 
-        // Return the finished laser GameObject
         return newLaser;
     }
 }
