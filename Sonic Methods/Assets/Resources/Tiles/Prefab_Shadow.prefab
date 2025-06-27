@@ -298,6 +298,8 @@ GameObject:
   - component: {fileID: 7459979367475338311}
   - component: {fileID: 8361563909286458207}
   - component: {fileID: 3224434509036344537}
+  - component: {fileID: 3564464004211551095}
+  - component: {fileID: 2590247803902825200}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -332,8 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8ebd8b7844502498d1dda408b97103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireballWeapon: {fileID: 0}
+  fireballWeapon: {fileID: 2590247803902825200}
   axeWeapon: {fileID: 3224434509036344537}
+  laserWeapon: {fileID: 3564464004211551095}
 --- !u!114 &3224434509036344537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +350,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axe: {fileID: 460594579410848658, guid: 4ab8b6dd74ca8374588c1806bdf74e28, type: 3}
+--- !u!114 &3564464004211551095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456726444697063484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0904e02e8826dc4d96cccdb5f04844e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 460594579410848658, guid: f805fe879dc585241a88cf14ab91ba4e, type: 3}
+--- !u!114 &2590247803902825200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456726444697063484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d0366fbecf29440968c94cb9b88b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 460594579410848658, guid: 749db9f6f469d3843a8558e628486c6e, type: 3}
 --- !u!1 &5799809009901458030
 GameObject:
   m_ObjectHideFlags: 0

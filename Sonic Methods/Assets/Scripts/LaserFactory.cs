@@ -1,19 +1,22 @@
 using UnityEngine;
+using Zenject;
 
-public class LaserFactory
+// Factory that builds lasers using the director and a prefab set in the Inspector
+public class LaserFactory : MonoBehaviour
 {
-    private GameObject _laserPrefab;
+    [SerializeField] private GameObject _laserPrefab; // Set in Inspector
 
-    public LaserFactory(GameObject laserPrefab)
+    private LaserDirector _laserDirector;
+
+    [Inject]
+    public void Construct(LaserDirector director)
     {
-        _laserPrefab = laserPrefab;
+        _laserDirector = director;
     }
 
     public ProjectileLaser CreateLaser()
     {
-        GameObject laser = Object.Instantiate(_laserPrefab);
-        ProjectileLaser logic = laser.GetComponent<ProjectileLaser>();
-        logic.Initialized(0.5f, 3f); // You can expose this too
-        return logic;
+        GameObject laser = _laserDirector.Construct(_laserPrefab);
+        return laser.GetComponent<ProjectileLaser>();
     }
 }

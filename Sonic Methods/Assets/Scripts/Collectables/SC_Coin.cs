@@ -10,10 +10,10 @@ public class SC_Coin : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
+       // Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Mario Collision!");
+         //   Debug.Log("Mario Collision!");
             if (OnCoinCollision != null)
                 OnCoinCollision();
 

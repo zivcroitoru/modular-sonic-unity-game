@@ -33,7 +33,7 @@ public class BuildLevel : EditorWindow
 
     private void CreateLevel()
     {
-        Debug.Log("Creating level... " + _curLevel.name);
+     Debug.Log("Creating level... " + (_curLevel != null ? _curLevel.name : "null"));
         try
         {
             string jsonData = _curLevel.text;

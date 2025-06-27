@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class AlienFactory : ShadowEnemyFactory
 {
+    private GameObject _prefab;
+
+    public AlienFactory(GameObject prefab)
+    {
+        _prefab = prefab;
+    }
+
     public override ShadowEnemy CreateShadowEnemy()
     {
-        GameObject alien = new GameObject("Alien " + Time.time);
-        AlienEnemy logic = alien.AddComponent<AlienEnemy>();
-        return logic;
+        GameObject obj = Object.Instantiate(_prefab);
+        return obj.GetComponent<ShadowEnemy>();
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7344749491402581461}
   - component: {fileID: 3128399289799986672}
   - component: {fileID: -3460905289729604622}
-  - component: {fileID: 7299617599680421506}
+  - component: {fileID: 9028876921950425613}
   m_Layer: 0
   m_Name: Pre_Fireball
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e5fdff5405ab7f4b987f068ff3c8acb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22e316701d6dbb54e806a235f57052ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &7299617599680421506
+--- !u!114 &9028876921950425613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 460594579410848658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 868cfcc11b83590479b0624947b5ec2f, type: 3}
+  m_Script: {fileID: 11500000, guid: ab9fab74fbc550040bafde9868243463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
-  _destroyTime: 2
+  _speed: 5
+  _destroyTime: 5

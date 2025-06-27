@@ -9,6 +9,6 @@ public class CoinsView : MonoBehaviour, ICoinView
     public void UpdateCoinsAmount(int amount)
     {
         if (coinsText != null)
-            coinsText.text = "Rings: " + amount;
+              coinsText.text = amount.ToString();
     }
 }

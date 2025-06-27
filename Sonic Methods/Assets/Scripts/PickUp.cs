@@ -8,7 +8,7 @@ public abstract class PickUp : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Mario Collision! " + name);
+          //  Debug.Log("Mario Collision! " + name);
             OnPickUp(col.gameObject);
             this.gameObject.SetActive(false);
         }
